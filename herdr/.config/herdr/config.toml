@@ -1,4 +1,5 @@
-# Omarchy theme/UI defaults, with keymaps from mark-groves/dotfiles.
+# Mirrors the Omarchy tmux config in config/tmux/tmux.conf
+# tmux session -> herdr workspace, tmux window -> herdr tab, tmux pane -> herdr pane
 
 [theme]
 # tmux ran on the terminal's own palette (bg=default, fg=default, ANSI blue accents)
@@ -14,61 +15,62 @@ panel_bg = "black"
 new_cwd = "follow"
 
 [keys]
-# ctrl+s as prefix (free up ctrl+b). Note: shells/editors may also use ctrl+s.
-prefix = "ctrl+s"
+prefix = "ctrl+space"
 
 # Config and help
 reload_config = "prefix+q"
 help = "prefix+?"
 detach = "prefix+d"
 
-# Prefix keeps vim keys. Direct chords match Omarchy stock herdr.
-focus_pane_left = ["prefix+h", "ctrl+alt+left"]
-focus_pane_down = ["prefix+j", "ctrl+alt+down"]
-focus_pane_up = ["prefix+k", "ctrl+alt+up"]
-focus_pane_right = ["prefix+l", "ctrl+alt+right"]
-previous_tab = ["prefix+p", "ctrl+alt+["]
-next_tab = ["prefix+n", "ctrl+alt+]"]
-new_tab = ["prefix+c", "ctrl+alt+c"]
-split_vertical = ["prefix+v", "ctrl+alt+d"]
-split_horizontal = ["prefix+minus", "ctrl+alt+shift+d"]
-zoom = ["prefix+z", "ctrl+alt+z"]
-toggle_sidebar = ["prefix+b", "ctrl+alt+b"]
-workspace_picker = ["prefix+w", "ctrl+alt+w"]
+# Copy mode
+copy_mode = "prefix+["
+
+# Panes
+split_horizontal = ["prefix+h", "alt+enter"]
+split_vertical = ["prefix+v", "alt+shift+enter"]
+close_pane = ["prefix+x", "alt+esc"]
+zoom = "prefix+z"
 last_pane = "prefix+;"
-switch_workspace = "prefix+shift+1..9"
-focus_agent = "prefix+alt+1..9"
-previous_agent = "prefix+["
-next_agent = "prefix+]"
 
-[[keys.command]]
-key = "prefix+alt+g"
-type = "popup"
-command = "lazygit"
-description = "lazygit"
-width = "90%"
-height = "90%"
+focus_pane_left = "ctrl+alt+left"
+focus_pane_down = "ctrl+alt+down"
+focus_pane_up = "ctrl+alt+up"
+focus_pane_right = "ctrl+alt+right"
 
-[[keys.command]]
-key = "prefix+alt+t"
-type = "popup"
-command = "btop"
-description = "btop"
-width = "90%"
-height = "90%"
+resize_mode = ["prefix+ctrl+left", "prefix+ctrl+down", "prefix+ctrl+up", "prefix+ctrl+right"]
 
-[[keys.command]]
-key = "prefix+t"
-type = "popup"
-command = "exec \"${SHELL:-bash}\""
-description = "scratch terminal"
-width = "80%"
-height = "80%"
+# Like resize-pane on C-M-S-arrows
+resize_pane_left = "ctrl+alt+shift+left"
+resize_pane_down = "ctrl+alt+shift+down"
+resize_pane_up = "ctrl+alt+shift+up"
+resize_pane_right = "ctrl+alt+shift+right"
+
+# No tmux equivalent; herdr's default prefix+shift+p is taken by previous session
+rename_pane = "prefix+shift+o"
+
+# Windows -> tabs
+new_tab = "prefix+c"
+rename_tab = "prefix+r"
+close_tab = "prefix+k"
+switch_tab = ["prefix+1..9", "alt+1..9"]
+previous_tab = ["prefix+p", "alt+left"]
+next_tab = ["prefix+n", "alt+right"]
+
+# Like swap-window -t -1/+1 on M-S-Left/Right
+move_tab_previous = "alt+shift+left"
+move_tab_next = "alt+shift+right"
+
+# Sessions -> workspaces
+new_workspace = "prefix+shift+c"
+rename_workspace = "prefix+shift+r"
+close_workspace = "prefix+shift+k"
+previous_workspace = ["prefix+shift+p", "alt+up"]
+next_workspace = ["prefix+shift+n", "alt+down"]
 
 [ui]
 accent = "blue"
 
-# Boxed panes with a gap between them (Herdr default look)
+# Boxed panes with a gap between them
 pane_borders = true
 pane_gaps = true
 pane_outer_borders = true

@@ -4,7 +4,7 @@ Personal overrides for an [Omarchy](https://omarchy.org/) machine.
 
 Omarchy already ships Git, Herdr, Starship, Bash, Ghostty, and Neovim. Most of that is fine. This repo tracks only the files that differ from those defaults, then links them into `$HOME`.
 
-A new Git repo should start on `main`, not Omarchy's `master`. Herdr should use the `ctrl+s` map, not the tmux-style one. The prompt should keep its two-line layout and still follow `omarchy theme set`. Bash should put a blank line between the command you type and its output.
+A new Git repo should start on `main`, not Omarchy's `master`. Herdr keeps Omarchy's keymap and only overrides pane chrome. The prompt should keep its two-line layout and still follow `omarchy theme set`. Bash should put a blank line between the command you type and its output.
 
 Everything else stays with Omarchy. Do not fork `~/.config/git/config`, Ghostty, or Neovim here. If you change only one key, store only that key.
 
@@ -28,7 +28,7 @@ ln -sfn "$PWD/git/.gitconfig" ~/.gitconfig
 
 ### Herdr
 
-Keeps Omarchy's theme and UI. Replaces the key map with `ctrl+s`, vim pane keys, and the lazygit, btop, and scratch-terminal popups.
+Omarchy's keymap, with boxed panes instead of tmux-style splitters.
 
 ```bash
 ln -sfn "$PWD/herdr/.config/herdr/config.toml" ~/.config/herdr/config.toml
