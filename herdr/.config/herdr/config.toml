@@ -22,11 +22,11 @@ reload_config = "prefix+q"
 help = "prefix+?"
 detach = "prefix+d"
 
-# Keep prefix bindings, add direct ctrl+alt chords.
-focus_pane_left = ["prefix+h", "ctrl+alt+h"]
-focus_pane_down = ["prefix+j", "ctrl+alt+j"]
-focus_pane_up = ["prefix+k", "ctrl+alt+k"]
-focus_pane_right = ["prefix+l", "ctrl+alt+;"]
+# Prefix keeps vim keys. Direct chords match Omarchy stock herdr.
+focus_pane_left = ["prefix+h", "ctrl+alt+left"]
+focus_pane_down = ["prefix+j", "ctrl+alt+down"]
+focus_pane_up = ["prefix+k", "ctrl+alt+up"]
+focus_pane_right = ["prefix+l", "ctrl+alt+right"]
 previous_tab = ["prefix+p", "ctrl+alt+["]
 next_tab = ["prefix+n", "ctrl+alt+]"]
 new_tab = ["prefix+c", "ctrl+alt+c"]
@@ -68,9 +68,10 @@ height = "80%"
 [ui]
 accent = "blue"
 
-# tmux drew single-line dividers between adjacent panes and no outer frame
-pane_gaps = false
-pane_outer_borders = false
+# Boxed panes with a gap between them (Herdr default look)
+pane_borders = true
+pane_gaps = true
+pane_outer_borders = true
 
 # tmux had no scrollbar column beside its panes
 pane_scrollbars = false
