@@ -1,0 +1,2 @@
+# Blank line between the typed command and its output.
+PS0=$'\n'

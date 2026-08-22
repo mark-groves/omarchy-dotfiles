@@ -1,0 +1,3 @@
+# Overrides Omarchy's ~/.config/git/config. Later file wins.
+[init]
+	defaultBranch = main
