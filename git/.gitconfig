@@ -1,3 +1,9 @@
 # Overrides Omarchy's ~/.config/git/config. Later file wins.
 [init]
 	defaultBranch = main
+[credential "https://origin.cursor.com/git"]
+	helper = 
+	helper = !/home/grovr/.local/bin/origin credential-helper
+[credential "https://origin.cursor.com"]
+	helper = 
+	helper = !/home/grovr/.local/bin/origin credential-helper
