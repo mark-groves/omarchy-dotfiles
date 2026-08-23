@@ -4,13 +4,13 @@ Personal overrides for an [Omarchy](https://omarchy.org/) machine.
 
 Omarchy already ships Git, Herdr, Starship, Bash, Ghostty, and Neovim. Most of that is fine. This repo tracks only the files that differ from those defaults, then links them into `$HOME`.
 
-A new Git repo should start on `main`, not Omarchy's `master`. Herdr keeps Omarchy's keymap and only overrides pane chrome. The prompt should keep its two-line layout and still follow `omarchy theme set`. Bash should put a blank line between the command you type and its output.
+A new Git repo should start on `main`, not Omarchy's `master`. Herdr keeps Omarchy's keymap and only overrides pane chrome. The prompt should keep its two-line layout and still follow `omarchy theme set`. Bash should put a blank line between the command you type and its output. Hyprland should launch Cursor on Super+Shift+C and Neovim on Super+Shift+N.
 
 Everything else stays with Omarchy. Do not fork `~/.config/git/config`, Ghostty, or Neovim here. If you change only one key, store only that key.
 
 Each override is a file under its app directory. Live paths are symlinks into this repo, except Starship. Starship's palette is generated. The file you edit is the template. `omarchy theme set` writes the colors into `~/.local/state/omarchy/current/theme/starship.toml`.
 
-`omarchy refresh` copies stock files back over some of these paths and drops the symlink. Skip `omarchy refresh herdr` and `omarchy refresh config starship.toml` unless you want the defaults back.
+`omarchy refresh` copies stock files back over some of these paths and drops the symlink. Skip `omarchy refresh herdr`, `omarchy refresh hyprland`, and `omarchy refresh config starship.toml` unless you want the defaults back.
 
 ## Apply the overlays
 
@@ -35,7 +35,14 @@ ln -sfn "$PWD/herdr/.config/herdr/config.toml" ~/.config/herdr/config.toml
 omarchy restart herdr
 ```
 
+### Hyprland
 
+Cursor on Super+Shift+C. Super+Shift+N goes back to Neovim. Super+Shift+C used to be the Hey.com calendar; the clock calendar widget stays on Super+Ctrl+Alt+D.
+
+```bash
+ln -sfn "$PWD/hypr/.config/hypr/bindings.lua" ~/.config/hypr/bindings.lua
+hyprctl reload
+```
 
 ### Bash
 
