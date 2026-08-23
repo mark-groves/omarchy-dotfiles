@@ -6,3 +6,7 @@ o.bind("SUPER + SHIFT + C", "Cursor", { launch = "cursor", focus = "^Cursor$" })
 -- Super+Shift+N was the generic editor (now Cursor). Put N back on Neovim.
 hl.unbind("SUPER + SHIFT + N")
 o.bind("SUPER + SHIFT + N", "Neovim", { tui = "nvim", focus = true })
+
+-- Super+Shift+G was Signal. WhatsApp stays on Super+Shift+Alt+G.
+hl.unbind("SUPER + SHIFT + G")
+o.bind("SUPER + SHIFT + G", "Grok Bot", { launch = "grok-bot", focus = "^Grok Bot$" })
