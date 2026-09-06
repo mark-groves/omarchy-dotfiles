@@ -83,7 +83,8 @@ show_notifications = false
 [os]
 disabled = false
 style = "bold sys"
-# Starship has no Omarchy OS id. Use the shipped U+E900 mark from omarchy.ttf.
+# Starship has no Omarchy OS id. U+E900 is the mark in omarchy.ttf.
+# Nerd Fonts also put COBOL there; terminals must map this range to omarchy.
 format = "[]($style)  "
 
 [os.symbols]
